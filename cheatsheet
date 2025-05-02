@@ -1,0 +1,5 @@
+#create imagename from reference folder
+sudo docker build -t imagename:1.0 ~/dev/dockerfiles/https_server
+
+#create and start container from imagename, with port forwarding host:4443 => container:4443
+sudo docker run -p 4443:4443 -it imagename:1.0
