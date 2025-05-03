@@ -1,5 +1,5 @@
 # This is a sample Dockerfile
-FROM archlinux
+FROM docker.io/archlinux
 
 ENV VERSION="0.1.1"
 ENV SOURCE_DIR=/usr/share/dev
