@@ -28,10 +28,8 @@ RUN pacman -Sy --noconfirm \
             sqlite \
     && find /var/cache/pacman/ -type f -delete
     
-RUN mkdir -p "$SOURCE_DIR"
-
 RUN /sbin/useradd -m $SERVER_USERNAME
-RUN echo "$SERVER_USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+#RUN echo "$SERVER_USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 #USERLAND
 USER public
@@ -41,8 +39,4 @@ RUN mkdir -p "/home/$SERVER_USERNAME/dev"
 RUN cd "/home/$SERVER_USERNAME/dev" && git clone "$ALIAS_SOURCE" && cat vps_config/.bash_aliases "/home/$SERVER_USERNAME/.bashrc" > vps_config/.bashrc && mv vps_config/.bashrc "/home/$SERVER_USERNAME/.bashrc" && source "/home/$SERVER_USERNAME/.bashrc"
 
 # HTTPS SERVER
-RUN cd "/home/$SERVER_USERNAME/dev" && git clone "$HTTPS_SERVER_SOURCE" && cd servertools && chmod +x utils/install
-RUN cd "/home/$SERVER_USERNAME/dev" && cd servertools && ./install.sh
-RUN mkdir -p "/home/$SERVER_USERNAME/public"
-RUN echo "this is a test server" > "/home/$SERVER_USERNAME/public/hello.txt"
-RUN echo "alias httpserver='cd /home/$SERVER_USERNAME/public && source /home/$SERVER_USERNAME/dev/servertools/venv/bin/activate && python3 /home/$SERVER_USERNAME/dev/servertools/runHTTPS.py'" >> "/home/$SERVER_USERNAME/.bashrc" && source /home/$SERVER_USERNAME/.bashrc
+RUN cd "/home/$SERVER_USERNAME/dev" && git clone "$HTTPS_SERVER_SOURCE" && cd servertools && chmod +x utils/install.sh && cd "/home/$SERVER_USERNAME/dev" && cd servertools && ./install.sh && mkdir -p "/home/$SERVER_USERNAME/public" && echo "this is a test server" > "/home/$SERVER_USERNAME/public/hello.txt" && echo "alias httpserver='cd /home/$SERVER_USERNAME/public && source /home/$SERVER_USERNAME/dev/servertools/venv/bin/activate && python3 /home/$SERVER_USERNAME/dev/servertools/runHTTPS.py'" >> "/home/$SERVER_USERNAME/.bashrc" && source /home/$SERVER_USERNAME/.bashrc
