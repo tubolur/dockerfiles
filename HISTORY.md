@@ -1,7 +1,8 @@
 # VERSION HISTORY
 
+## httpsserver 
 <details>
-   <summary> ## httpsserver </summary>
+   <summary> **VERSIONS** </summary>
 
 ### 0.1.0
 - [x] first version
@@ -10,8 +11,12 @@
 
 </details>
 
-
 ## cheatsheet
+<details>
+   <summary> **VERSIONS** </summary>
+   
 ### 0.1.0
 - [x] first version
 - [ ] include podman information
+
+</details>
