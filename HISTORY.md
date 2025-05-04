@@ -27,6 +27,7 @@
 - [x] first version
 - [x] retrieve key and cert files from host directory
 - [x] make the host folder containing key/repo data accessible to the container image build **fixed by copying files into the same dir as Dockerfile**
+- [ ] fix HTTPS Server only sharing **public/** folder
 - [ ] improve image size (currently around 1.2 Gb)
 - [ ] dispatch Dockerfile in smaller layers
 
