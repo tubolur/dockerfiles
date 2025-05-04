@@ -44,3 +44,12 @@ RUN cd "/home/$SERVER_USERNAME/dev" && git clone "$HTTPS_SERVER_SOURCE" && cd se
 # retrieve key & cert
 COPY /home/debian/dev/servertools/utils/cert.pem /home/public/dev/servertools/utils/cert.pem
 COPY /home/debian/dev/servertools/utils/key.pem /home/public/dev/servertools/utils/key.pem
+
+#retrieve repo files
+RUN mkdir -p "/home/$SERVER_USERNAME/public/repo"
+COPY /home/debian/public/repo/custom.db /home/public/public/repo
+COPY /home/debian/public/repo/custom.db.tar.gz /home/public/public/repo
+COPY /home/debian/public/repo/custom.files /home/public/public/repo
+COPY /home/debian/public/repo/custom.files.tar.gz /home/public/public/repo
+COPY /home/debian/public/repo/fors-sala-bin-1.0.0-1-x86_64.pkg.tar.zst /home/public/public/repo
+
