@@ -53,4 +53,4 @@ COPY custom.files /home/public/public/repo
 COPY custom.files.tar.gz /home/public/public/repo
 COPY fors-sala-bin-1.0.0-1-x86_64.pkg.tar.zst /home/public/public/repo
 
-RUN sudo chown -R "$SERVER_USERNAME"
+RUN chown -R "$SERVER_USERNAME"
