@@ -2,7 +2,7 @@
 
 ## httpsserver 
 <details>
-   <summary> **VERSIONS** </summary>
+   <summary> details </summary>
 
 ### 0.1.0
 - [x] first version
@@ -13,7 +13,7 @@
 
 ## cheatsheet
 <details>
-   <summary> **VERSIONS** </summary>
+   <summary> details </summary>
    
 ### 0.1.0
 - [x] first version
