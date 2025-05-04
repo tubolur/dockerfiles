@@ -27,7 +27,6 @@ RUN pacman -Sy --noconfirm \
             nano \
             sqlite \
             unzip \
-            tar \
     && find /var/cache/pacman/ -type f -delete
     
 RUN /sbin/useradd -m $SERVER_USERNAME
