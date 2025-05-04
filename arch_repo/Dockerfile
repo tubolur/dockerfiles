@@ -1,10 +1,7 @@
 FROM docker.io/archlinux
 
 ENV VERSION="0.1.4"
-ENV SOURCE_DIR=/usr/share/dev
-ENV MAIN_USERNAME=debian
 ENV SERVER_USERNAME=public
-ENV HTTPS_SERVER_WORKING_DIR=~/public
 ENV HTTPS_SERVER_SOURCE=https://github.com/tubolur/servertools
 ENV ALIAS_SOURCE=https://github.com/tubolur/vps_config
 ENV PACKAGE_ZIP_URL=""
