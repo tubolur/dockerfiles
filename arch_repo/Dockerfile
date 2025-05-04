@@ -1,6 +1,6 @@
 FROM docker.io/archlinux
 
-ENV VERSION="0.1.2"
+ENV VERSION="0.1.3"
 ENV SOURCE_DIR=/usr/share/dev
 ENV MAIN_USERNAME=debian
 ENV SERVER_USERNAME=public
@@ -26,6 +26,8 @@ RUN pacman -Sy --noconfirm \
             sudo \
             nano \
             sqlite \
+            unzip \
+            tar \
     && find /var/cache/pacman/ -type f -delete
     
 RUN /sbin/useradd -m $SERVER_USERNAME
