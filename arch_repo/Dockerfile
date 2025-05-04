@@ -1,4 +1,3 @@
-# This is a sample Dockerfile
 FROM docker.io/archlinux
 
 ENV VERSION="0.1.1"
@@ -53,4 +52,8 @@ COPY custom.files /home/public/public/repo
 COPY custom.files.tar.gz /home/public/public/repo
 COPY fors-sala-bin-1.0.0-1-x86_64.pkg.tar.zst /home/public/public/repo
 
+USER root
 RUN chown -R "$SERVER_USERNAME" "/home/$SERVER_USERNAME/public/repo"
+RUN chown -R "$SERVER_USERNAME" "/home/public/dev/servertools/utils"
+
+USER public
