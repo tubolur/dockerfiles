@@ -47,11 +47,7 @@ COPY key.pem /home/public/dev/servertools/utils/key.pem
 #retrieve repo files
 RUN mkdir -p "/home/$SERVER_USERNAME/public/repo" && cd "/home/$SERVER_USERNAME/public/repo" && wget -O "${PACKAGE_ZIP}" "${PACKAGE_ZIP_URL}" && unzip "${PACKAGE_ZIP}" && rm "${PACKAGE_ZIP}"
 
-
-
-
 USER root
-RUN chown -R "$SERVER_USERNAME" "/home/$SERVER_USERNAME/public/repo"
 RUN chown -R "$SERVER_USERNAME" "/home/public/dev/servertools/utils"
 
 USER public
