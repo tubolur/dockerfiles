@@ -1,11 +1,7 @@
-# This is a sample Dockerfile
 FROM docker.io/archlinux
 
-ENV VERSION="0.1.1"
-ENV SOURCE_DIR=/usr/share/dev
-ENV MAIN_USERNAME=debian
+ENV VERSION="0.1.2"
 ENV SERVER_USERNAME=public
-ENV HTTPS_SERVER_WORKING_DIR=~/public
 ENV HTTPS_SERVER_SOURCE=https://github.com/tubolur/servertools
 ENV ALIAS_SOURCE=https://github.com/tubolur/vps_config
 
@@ -27,6 +23,7 @@ RUN pacman -Sy --noconfirm \
             sudo \
             nano \
             sqlite \
+            unzip \
     && find /var/cache/pacman/ -type f -delete
     
 RUN /sbin/useradd -m $SERVER_USERNAME
