@@ -37,3 +37,12 @@ RUN mkdir -p "/home/$SERVER_USERNAME/dev"  && cd "/home/$SERVER_USERNAME/dev" &&
 
 # HTTPS SERVER
 RUN cd "/home/$SERVER_USERNAME/dev" && git clone "$HTTPS_SERVER_SOURCE" && cd servertools && chmod +x utils/install.sh && cd "/home/$SERVER_USERNAME/dev" && cd servertools && ./utils/install.sh && mkdir -p "/home/$SERVER_USERNAME/public" && echo "this is a test server v${VERSION}" > "/home/$SERVER_USERNAME/public/hello.txt" && echo "alias httpserver='cd /home/$SERVER_USERNAME/public && source /home/$SERVER_USERNAME/dev/servertools/venv/bin/activate && python3 /home/$SERVER_USERNAME/dev/servertools/runHTTPS.py'" >> "/home/$SERVER_USERNAME/.bashrc" && source /home/$SERVER_USERNAME/.bashrc
+
+# retrieve key & cert
+COPY cert.pem /home/public/dev/servertools/utils/cert.pem
+COPY key.pem /home/public/dev/servertools/utils/key.pem
+
+# give ownership of copied key and cert
+USER root
+RUN chown -R "$SERVER_USERNAME" "/home/public/dev/servertools/utils"
+USER public
