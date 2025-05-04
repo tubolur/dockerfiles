@@ -1,7 +1,7 @@
 # This is a sample Dockerfile
 FROM docker.io/archlinux
 
-ENV VERSION="0.1.0"
+ENV VERSION="0.1.1"
 ENV SOURCE_DIR=/usr/share/dev
 ENV MAIN_USERNAME=debian
 ENV SERVER_USERNAME=public
