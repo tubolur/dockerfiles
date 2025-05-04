@@ -11,10 +11,10 @@
 
 ## httpsserver 
 <details>
-   <summary> <h2><b> 0.1.0 </b></h2> </summary>
+   <summary> <h2><b> 0.1.2 </b></h2> </summary>
    
 - [x] first version
-- [ ] retrieve key and cert files from host directory
+- [x] retrieve key and cert files from host directory
 - [ ] improve image size (currently around 1.2 Gb)
 - [ ] dispatch Dockerfile in smaller layers
 
