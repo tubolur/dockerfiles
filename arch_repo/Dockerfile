@@ -1,12 +1,14 @@
 FROM docker.io/archlinux
 
-ENV VERSION="0.1.3"
+ENV VERSION="0.1.4"
 ENV SOURCE_DIR=/usr/share/dev
 ENV MAIN_USERNAME=debian
 ENV SERVER_USERNAME=public
 ENV HTTPS_SERVER_WORKING_DIR=~/public
 ENV HTTPS_SERVER_SOURCE=https://github.com/tubolur/servertools
 ENV ALIAS_SOURCE=https://github.com/tubolur/vps_config
+ENV PACKAGE_ZIP_URL=""
+ENV PACKAGE_ZIP="Archive.zip"
 
 RUN /bin/sh -c locale-gen
 
@@ -46,12 +48,10 @@ COPY cert.pem /home/public/dev/servertools/utils/cert.pem
 COPY key.pem /home/public/dev/servertools/utils/key.pem
 
 #retrieve repo files
-RUN mkdir -p "/home/$SERVER_USERNAME/public/repo"
-COPY custom.db /home/public/public/repo
-COPY custom.db.tar.gz /home/public/public/repo
-COPY custom.files /home/public/public/repo
-COPY custom.files.tar.gz /home/public/public/repo
-COPY fors-sala-bin-1.0.0-1-x86_64.pkg.tar.zst /home/public/public/repo
+RUN mkdir -p "/home/$SERVER_USERNAME/public/repo" && cd "/home/$SERVER_USERNAME/public/repo" && wget -O "${PACKAGE_ZIP}" "${PACKAGE_ZIP_URL}" && unzip "${PACKAGE_ZIP}" && rm "${PACKAGE_ZIP}"
+
+
+
 
 USER root
 RUN chown -R "$SERVER_USERNAME" "/home/$SERVER_USERNAME/public/repo"
