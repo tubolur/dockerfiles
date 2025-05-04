@@ -2,8 +2,7 @@
 
 ## httpsserver 
 <details>
-   <summary> details </summary>
-
+   <summary> 0.1.0 </summary>
 ### 0.1.0
 - [x] first version
 - [ ] improve image size (currently around 1.2 Gb)
@@ -13,8 +12,7 @@
 
 ## cheatsheet
 <details>
-   <summary> details </summary>
-   
+   <summary> 0.1.0 </summary>   
 ### 0.1.0
 - [x] first version
 - [ ] include podman information
