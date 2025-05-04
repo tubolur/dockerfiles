@@ -42,14 +42,13 @@ RUN mkdir -p "/home/$SERVER_USERNAME/dev"  && cd "/home/$SERVER_USERNAME/dev" &&
 RUN cd "/home/$SERVER_USERNAME/dev" && git clone "$HTTPS_SERVER_SOURCE" && cd servertools && chmod +x utils/install.sh && cd "/home/$SERVER_USERNAME/dev" && cd servertools && ./utils/install.sh && mkdir -p "/home/$SERVER_USERNAME/public" && echo "this is a test server v${VERSION}" > "/home/$SERVER_USERNAME/public/hello.txt" && echo "alias httpserver='cd /home/$SERVER_USERNAME/public && source /home/$SERVER_USERNAME/dev/servertools/venv/bin/activate && python3 /home/$SERVER_USERNAME/dev/servertools/runHTTPS.py'" >> "/home/$SERVER_USERNAME/.bashrc" && source /home/$SERVER_USERNAME/.bashrc
 
 # retrieve key & cert
-COPY /home/debian/dev/servertools/utils/cert.pem /home/public/dev/servertools/utils/cert.pem
-COPY /home/debian/dev/servertools/utils/key.pem /home/public/dev/servertools/utils/key.pem
+COPY cert.pem /home/public/dev/servertools/utils/cert.pem
+COPY key.pem /home/public/dev/servertools/utils/key.pem
 
 #retrieve repo files
 RUN mkdir -p "/home/$SERVER_USERNAME/public/repo"
-COPY /home/debian/public/repo/custom.db /home/public/public/repo
-COPY /home/debian/public/repo/custom.db.tar.gz /home/public/public/repo
-COPY /home/debian/public/repo/custom.files /home/public/public/repo
-COPY /home/debian/public/repo/custom.files.tar.gz /home/public/public/repo
-COPY /home/debian/public/repo/fors-sala-bin-1.0.0-1-x86_64.pkg.tar.zst /home/public/public/repo
-
+COPY custom.db /home/public/public/repo
+COPY custom.db.tar.gz /home/public/public/repo
+COPY custom.files /home/public/public/repo
+COPY custom.files.tar.gz /home/public/public/repo
+COPY fors-sala-bin-1.0.0-1-x86_64.pkg.tar.zst /home/public/public/repo
