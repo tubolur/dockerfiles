@@ -2,11 +2,11 @@
 
 ## cheatsheet
 <details>
-   <summary> <h2><b> 0.1.0 </b></h2> </summary>  
+   <summary> <h2><b> 0.1.1 </b></h2> </summary>  
    
 - [x] first version
-- [ ] include podman information
-
+- [x] include podman information
+- [x] podman-tui troubleshooting 
 </details>
 
 ## httpsserver 
@@ -17,7 +17,6 @@
 - [x] retrieve key and cert files from host directory
 - [ ] improve image size (currently around 1.2 Gb)
 - [ ] dispatch Dockerfile in smaller layers
-
 </details>
 
 ## arch_repo 
@@ -32,7 +31,6 @@
 - [ ] fix HTTPS Server only sharing **public/** folder
 - [ ] improve image size (currently around 1.2 Gb)
 - [ ] dispatch Dockerfile in smaller layers
-
 </details>
 
 ## dns_resolver
