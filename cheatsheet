@@ -6,3 +6,6 @@ sudo docker run -p 4443:4443 -it imagename:1.0
 
 #to be able to use podman term ui (podman-tui), dont foget to run podman.socket service as user
 systemctl start --user  podman.socket
+
+#list network ports in use
+netstat -ano -p tcp
