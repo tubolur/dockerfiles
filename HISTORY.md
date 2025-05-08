@@ -34,3 +34,11 @@
 - [ ] dispatch Dockerfile in smaller layers
 
 </details>
+
+## dns_resolver
+<details>
+   <summary> <h2><b> 0.1.0 </b></h2> </summary>
+   
+- [x] first version on host port 5003
+- [ ] test 
+</details>
