@@ -1,4 +1,4 @@
 # DNS RESOLVER Docker image
 
 run with 
-`docker run --name my-unbound --detach=true --publish=53:53/tcp --publish=53:53/udp --restart=unless-stopped --volume $(pwd)/forward-records.conf:/opt/unbound/etc/unbound/forward-records.conf:ro mvance/unbound:latest`
+`podman run --name unbound --detach=true --publish=5003:53/tcp --publish=5003:53/udp --restart=unless-stopped --volume $HOME/dev/dockerfiles/dns_resolver/forward-records.conf:/opt/unbound/etc/unbound/forward-records.conf:ro localhost/dnsresolver:1.0`
